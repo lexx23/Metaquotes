@@ -1,0 +1,16 @@
+
+Common/bin/
+
+Common/obj/
+
+Core/bin/
+
+Core/obj/
+
+DAL.Binary/bin/
+
+DAL.Binary/obj/
+
+WebApplication/bin/
+
+WebApplication/obj/

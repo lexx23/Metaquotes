@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Test task</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700"/>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="~/main.css"/>
+
+    <script src="~/js/main.js"></script>
+    <script src="~/js/loader.js"></script>
+    <script src="~/js/pages/home.js"></script>
+    <script src="~/js/pages/locations.js"></script>
+    <script src="~/js/pages/geo.js"></script>
+
+</head>
+<body>
+<div id="loader" class="loader">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: auto; display: block;" width="100px" height="100px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+        <circle cx="50" cy="50" r="10" fill="#005cbf">
+            <animate attributeName="cx" values="71.21320343559643;28.78679656440357;71.21320343559643" keyTimes="0;0.5;1" dur="1s" calcMode="spline" keySplines="0.3 0 0.7 1;0.3 0 0.7 1" repeatCount="indefinite" begin="-0.25s"></animate>
+            <animate attributeName="cy" values="71.21320343559643;28.786796564403577;71.21320343559643" keyTimes="0;0.5;1" dur="1s" calcMode="spline" keySplines="0.3 0 0.7 1;0.3 0 0.7 1" repeatCount="indefinite" begin="-0.25s"></animate>
+            <animate attributeName="r" values="10;2;10;2;10" keyTimes="0;0.25;0.5;0.75;1" dur="1s" repeatCount="indefinite" begin="-0.25s"></animate>
+        </circle>
+        <circle cx="50" cy="50" r="10" fill="#17a2b8">
+            <animate attributeName="cx" values="28.786796564403577;71.21320343559643;28.786796564403577" keyTimes="0;0.5;1" dur="1s" calcMode="spline" keySplines="0.3 0 0.7 1;0.3 0 0.7 1" repeatCount="indefinite" begin="0s"></animate>
+            <animate attributeName="cy" values="71.21320343559643;28.78679656440357;71.21320343559643" keyTimes="0;0.5;1" dur="1s" calcMode="spline" keySplines="0.3 0 0.7 1;0.3 0 0.7 1" repeatCount="indefinite" begin="0s"></animate>
+            <animate attributeName="r" values="10;2;10;2;10" keyTimes="0;0.25;0.5;0.75;1" dur="1s" repeatCount="indefinite" begin="0s"></animate>
+        </circle>
+    </svg>
+</div>
+        
+<div class="wrapper">
+
+    <!--Sidebar-->
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <h3>Metaquotes</h3>
+        </div>
+
+        <ul id="sideNavigator" class="list-unstyled components"></ul>
+    </nav>
+    <!--Page content-->
+    <div class="content">
+        <!--Top navigator-->
+        <nav class="navbar">
+            <div class="breadcrumb-container">
+                <div class="col-lg-9">
+                    <h2 id="currentPageNameHeader"></h2>
+                    <ol class="breadcrumb">
+                        <li>
+                            <strong class="breadcrumb-link" onclick="mainApp.onNavigate('/')">Home</strong>
+                            <span>/</span>
+                            <span id="currentPageNameText"></span>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </nav>
+        <div id="pageContent" class="container-fluid"></div>
+    </div>
+</div>        
+</body>
+</html>
+
+<script>
+    const mainApp = new MainApp(); 
+    document.onreadystatechange = function () {
+        if (document.readyState === "complete") {
+            mainApp.initialize();
+        }
+    }
+</script>
